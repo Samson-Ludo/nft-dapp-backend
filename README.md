@@ -52,7 +52,7 @@ nft-dapp-backend/
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/nft-dapp-backend.git
+    git clone https://github.com/Samson-Ludo/nft-dapp-backend.git
     cd nft-dapp-backend
     ```
 
