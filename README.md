@@ -86,6 +86,25 @@ nft-dapp-backend/
       }
       ```
 
+### Deployment Instructions
+
+#### 1. **Deploy to GitHub**
+   - Push your code to a GitHub repository:
+     ```bash
+     git add .
+     git commit -m "Initial commit"
+     git push origin main
+     ```
+   - Ensure that your repository has a `README.md`, `.gitignore`, and other necessary files.
+
+#### 2. **Deploy to Netlify**
+   - Go to [Render](https://render.com/).
+   - Connect your GitHub repository.
+   - In the deployment settings, specify the following build settings:
+     - **Build Command**: `npm run build`
+     - **Publish Directory**: `dist`
+   - Click **Deploy** to deploy your DApp.
+
 ### Assumptions and Decisions
 
 - **IPFS Integration**: The choice to use Pinata was made for simplicity and ease of integration with IPFS.
