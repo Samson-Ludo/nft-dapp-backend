@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const multer = require('multer');
 const Pinata = require('@pinata/sdk');
-const fs = require('fs');
-const path = require('path');
+const cors = require('cors');
 
 // Initialize Express app
 const app = express();
@@ -15,6 +14,13 @@ const pinata = new Pinata(process.env.PINATA_API_KEY, process.env.PINATA_SECRET_
 // Set up multer for file uploads
 const storage = multer.memoryStorage(); // Use memory storage for this example
 const upload = multer({ storage });
+
+// Enable CORS for all origins (make API public)
+app.use(cors({
+  origin: '*', // This allows any origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all necessary methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers if needed
+}));
 
 // Handle file upload
 app.post('/upload', upload.single('file'), async (req, res) => {
