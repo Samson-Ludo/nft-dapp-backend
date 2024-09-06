@@ -15,7 +15,7 @@ const pinata = new Pinata(process.env.PINATA_API_KEY, process.env.PINATA_SECRET_
 const storage = multer.memoryStorage(); // Use memory storage for this example
 const upload = multer({ storage });
 
-// Enable CORS for all origins (make API public)
+// Enable CORS for all origins
 app.use(cors({
   origin: '*', // This allows any origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all necessary methods
